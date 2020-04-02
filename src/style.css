@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, input, button, textarea {
+    font: 400 14px 'Source Sans Pro', sans-serif;
+    -webkit-font-smoothing: antialised;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+.mainContainer {
+    background-color: #f7f7f7;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 600px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.mainTitle {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.getUserInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.getUserInfo input {
+    height: 40px;
+    width: 100%;
+    margin-right: 20px;
+    padding: 0 14px;
+    color: #333;
+    border-radius: 8px;
+    border: 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    text-align: 0;
+    transition: all 0.4s;
+}
+
+.getUserInfo input:focus {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    outline: 0;
+}
+
+.getUserInfo button {
+    width: 100px;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    height: 40px;
+    text-transform: uppercase;
+    font-size: 12px;
+}

@@ -24,15 +24,26 @@ img {
     height: 100vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.container {
-    width: 600px;
+.content {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.formContainer {
     background-color: #fff;
     border-radius: 20px;
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 280px;
+    box-sizing: border-box;
 }
 
 .mainTitle {
@@ -75,4 +86,59 @@ img {
     height: 40px;
     text-transform: uppercase;
     font-size: 12px;
+}
+
+.userInfoBlock {
+    border-radius: 20px;
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.overViewContainer {
+    margin-top: 30px;
+    width: 280px;
+}
+
+.userInfoVisual {
+    margin: -70px auto 20px;
+    width: 100px;
+}
+
+.userInfoImg {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.userInfoBlock {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.userInfoName {
+    margin-bottom: 10px;
+    font-size: 12px;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+}
+
+.userInfoBio {
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.userInfoLink {
+    background-image: linear-gradient(to right bottom, #ee505e, #f76351, #fc7845, #fd8d39, #faa330);
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    padding: 12px 20px;
+    width: fit-content;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }

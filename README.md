@@ -1,6 +1,6 @@
 # Github Overview
 
-Overview do Github, inspirado [nesse](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/GitHub-Profiles.md) desafio. O usuário digita um username de um usuário válido do github e recebe a foto, nome, bio e link para o perfil.
+Github overview, inspired by [this](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/GitHub-Profiles.md) challenge.
 
 ![](/gitImages/projectOverview.gif)
 

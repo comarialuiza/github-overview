@@ -2,18 +2,19 @@
 
 Overview do Github, inspirado [nesse](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/GitHub-Profiles.md) desafio. O usuário digita um username de um usuário válido do github e recebe a foto, nome, bio e link para o perfil.
 
-## Funcionalidades
-- [x] Pesquisar o usuário na API do GitHub
-- [ ] Retornar usuário com foto, nome, bio e link para o perfil.
-- [ ] Retornar quantidade de repositórios
-- [ ] Retornar últimos quatro repositórios
-- [ ] Pesquisar following e followers na API do GitHub
-- [ ] Retornar um erro se o usuário não existir
-- [ ] Implantar dark mode e persistir mesmo ao fechar a aplicação
 
-![](/gitImages/projectOverview.png)
+## User Stories
+- [x] User can enter a username
+- [x] User can click on search button to retrieve information
+- [x] User can see the avatar, username, followers and repository count of searched user
+- [ ] User can see the top 4 repositories of searched user
+- [x] User should get an alert if the username is not valid
+
+## Bonus Features
+- [x] User can toggle dark/light mode
+- [x] Selected mode should persist when user comes back to the app again
 
 ## Tecnologias utilizadas
-React
-Axios
-CSS
+- React
+- Axios
+- Feather Icons

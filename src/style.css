@@ -6,7 +6,10 @@
     box-sizing: border-box;
 }
 
-body, input, button, textarea {
+body,
+input,
+button,
+textarea {
     font: 400 14px 'Source Sans Pro', sans-serif;
     -webkit-font-smoothing: antialised;
 }
@@ -20,13 +23,13 @@ img {
 }
 
 .mainContainer {
-    background-color: #f7f7f7;
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.4s;
 }
 
 .content {
@@ -44,11 +47,58 @@ img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 280px;
     box-sizing: border-box;
+    position: relative;
+}
+
+.toggleMode {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    padding: 10px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: 0;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    transition: background-color .4s;
+}
+
+#light .toggleMode {
+    background-color: #333;
+}
+
+#dark .toggleMode {
+    background-color: #f7f7f7;
+}
+
+#light .toggleMode svg {
+    color: #f7f7f7;
+}
+
+#dark .toggleMode svg {
+    color: #333;
+}
+
+.toggleMode svg {
+    height: 14px;
+    width: 14px;
 }
 
 .mainTitle {
     margin-bottom: 15px;
     color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mainTitle svg {
+    width: 22px;
+    margin-right: 7px;
 }
 
 .getUserInfo {
@@ -112,7 +162,6 @@ img {
 
 .userInfoBlock {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
 .userInfoName {
@@ -120,6 +169,8 @@ img {
     font-size: 12px;
     letter-spacing: .3px;
     text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
 }
 
 .userInfoBio {
@@ -127,18 +178,186 @@ img {
     line-height: 24px;
 }
 
-.userInfoLink {
-    background-image: linear-gradient(to right bottom, #ee505e, #f76351, #fc7845, #fd8d39, #faa330);
+.userInfoLink,
+.userInfoHirable {
     color: #fff;
     font-size: 12px;
     text-transform: uppercase;
     display: block;
     padding: 12px 20px;
     width: fit-content;
-    border-radius: 20px;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    border-radius: 8px;
+    width: 48%;
     text-decoration: none;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.userInfoLink {
+    background-color: #333;
+}
+
+.userInfoHirable {
+    background-image: linear-gradient(to right bottom, #ee505e, #f76351, #fc7845, #fd8d39, #faa330);
+}
+
+.userInfoDefault {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.userInfoDefault svg {
+    margin-right: 10px;
+}
+
+.userInfoLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.userTitleDefaultTitle {
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    margin-right: 5px;
+}
+
+/* Loader */
+
+.loader-container {
+    text-align: center;
+}
+
+.loader {
+    color: #fff;
+    font-size: 50px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: 72px auto;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 1s infinite ease, round 1s infinite ease;
+    animation: load6 1s infinite ease, round 1s infinite ease;
+}
+
+@-webkit-keyframes load6 {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+
+@keyframes load6 {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+
+@-webkit-keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* Dark mode */
+#light {
+    background-color: #f7f7f7;
+}
+
+#dark {
+    background-color: #282a36;
+}
+
+/* Error handling */
+.error {
+    background-color: #bb0a1e;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.errorText {
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.errorText svg {
+    width: 32px;
+    height: 32px;
+    margin-right: 7px;
+    color: #fff;
 }

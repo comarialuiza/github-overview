@@ -21,16 +21,6 @@ function App() {
 
   const [ error, setError ] = useState(false);
 
-  const toggleTheme = () => {
-    if(theme === 'light') {
-      setTheme('dark');
-      localStorage.setItem('@githubOverview/theme', 'dark');
-    } else {
-      setTheme('light');
-      localStorage.setItem('@githubOverview/theme', 'light');
-    }
-  }
-
   const getUser = async (e) => {
     try {
       e.preventDefault();
@@ -45,14 +35,22 @@ function App() {
         
         const userInfo = res.data;
         
-        setUser(userInfo.name);
-        setUserImg(userInfo.avatar_url);
-        setUserFollowers(userInfo.followers);
-        setUserRepos(userInfo.public_repos);
-        setUserBio(userInfo.bio);
-        setUserHireable(userInfo.hireable);
-        setUserLink(userInfo.html_url);
-
+        const userName = userInfo.name;
+        const userImg = userInfo.avatar_url;
+        const userFollowers = userInfo.followers;
+        const userRepos = userInfo.public_repos;
+        const userBio = userInfo.bio;
+        const userHireable = userInfo.hireable;
+        const userLink = userInfo.html_url;
+        
+        setUser(userName);
+        setUserImg(userImg);
+        setUserFollowers(userFollowers);
+        setUserRepos(userRepos);
+        setUserBio(userBio);
+        setUserHireable(userHireable);
+        setUserLink(userLink);
+      
         setLoader(false);
       } 
 
@@ -62,6 +60,16 @@ function App() {
 
       setLoader(false);
       setError(true);
+    }
+  }
+
+  const toggleTheme = () => {
+    if(theme === 'light') {
+      setTheme('dark');
+      localStorage.setItem('@githubOverview/theme', 'dark');
+    } else {
+      setTheme('light');
+      localStorage.setItem('@githubOverview/theme', 'light');
     }
   }
   

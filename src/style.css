@@ -187,7 +187,7 @@ img {
     padding: 12px 20px;
     width: fit-content;
     border-radius: 8px;
-    width: 48%;
+    width: calc(50% - 10px);
     text-decoration: none;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     text-align: center;

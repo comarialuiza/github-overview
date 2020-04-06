@@ -134,8 +134,8 @@ function App() {
                     <p className="userInfoFollowers userInfoDefault"><FiUsers size={ 13 } color="#ee505e" /> <span className="userTitleDefaultTitle">Followers:</span> { userFollowers }</p>
 
                     <div className="userInfoLinks">
-                      <a href={ userLink } className="userInfoLink">Contact</a>
-                      { userHireable ? <a href={ userLink } className="userInfoHirable">Hire me!</a> : <Fragment /> }
+                      <a href={ userLink } className="userInfoLink" target="_blank" rel="noopener noreferrer">Contact</a>
+                      { userHireable ? <a href={ userLink } className="userInfoHirable" target="_blank" rel="noopener noreferrer">Hire me!</a> : <Fragment /> }
                     </div>
                   </div>
                 </div>
@@ -148,7 +148,7 @@ function App() {
                           <p className="reposTitle">{ repo.name }</p>
                           <p className="reposDesc">{ repo.description }</p>
                           <p className="reposLanguage"><span className="reposLanguageTitle">Language:</span> { repo.language }</p>
-                          <a className="reposLink" href={ repo.html_url }>See Repository</a>
+                          <a className="reposLink" href={ repo.html_url } target="_blank" rel="noopener noreferrer">See Repository</a>
                         </li>
                       )) 
                     }

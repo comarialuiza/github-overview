@@ -23,7 +23,8 @@ img {
 }
 
 .mainContainer {
-    height: 100vh;
+    padding: 50px 0;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -138,16 +139,57 @@ img {
     font-size: 12px;
 }
 
-.userInfoBlock {
-    border-radius: 20px;
+.userBlock {
     margin-top: 50px;
+}
+
+@media screen and (min-width: 991px) {
+    .userBlock {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .userReposBlock {
+        width: 400px;
+    }
+
+    .userInfoBlock, .userReposBlock {
+        margin: 0 30px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .userReposBlock {
+        width: 280px;
+        margin-top: 20px;
+    }
+}
+
+.userInfoBlock, .userReposBlock {
+    border-radius: 20px;
     background-color: #fff;
     padding: 20px;
 }
 
+.userInfoBlock {
+    width: 280px;
+}
+
+
+
+.reposUnit:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
 .overViewContainer {
     margin-top: 30px;
-    width: 280px;
+}
+
+@media screeen and (max-width: 990px) {
+    .overviewContainer {
+        width: 280px;
+    }
 }
 
 .userInfoVisual {
@@ -233,8 +275,15 @@ img {
     text-align: center;
 }
 
-.loader {
+#dark .loader {
     color: #fff;
+}
+
+#light .loader {
+    color: #333;
+}
+
+.loader {
     font-size: 50px;
     text-indent: -9999em;
     overflow: hidden;
@@ -344,6 +393,7 @@ img {
     background-color: #bb0a1e;
     padding: 20px;
     border-radius: 20px;
+    width: 280px;
 }
 
 .errorText {
@@ -360,4 +410,45 @@ img {
     height: 32px;
     margin-right: 7px;
     color: #fff;
+}
+
+/* Repositores */
+
+.reposContainer {
+    list-style: none;
+}
+
+.reposTitle {
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 7px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.reposDesc {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.reposLanguage {
+    font-size: 12px;
+    margin: 4px 0;
+}
+
+.reposLanguageTitle {
+    font-weight: 700;
+}
+
+.reposLink {
+    display: block;
+    padding: 8px 10px;
+    width: fit-content;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 8px;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-top: 12px;
 }

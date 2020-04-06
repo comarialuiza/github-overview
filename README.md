@@ -15,6 +15,9 @@ Github overview, inspired by [this](https://github.com/florinpop17/app-ideas/blo
 - [x] User can toggle dark/light mode
 - [x] Selected mode should persist when user comes back to the app again
 
+## Added Functionality
+- [x] If user is hirable, it will show a "hire me" button 
+
 ## Tecnologias utilizadas
 - React
 - Axios

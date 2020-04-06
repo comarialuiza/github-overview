@@ -15,9 +15,11 @@ function App() {
 
   const [ loader, setLoader ] = useState(false);
 
+  const [ reposInfo, setReposInfo ] = useState([]);
+
   const localTheme = useState(localStorage.getItem('@githubOverview/theme'));
 
-  const [ theme, setTheme ] = (localTheme ||'light');
+  const [ theme, setTheme ] = (localTheme || 'light');
 
   const [ error, setError ] = useState(false);
 
@@ -32,7 +34,11 @@ function App() {
         setLoader(true);
 
         const res = await api.get(`${user}`);
+        const repos = await api.get(`${user}/repos`);
+        const reposInfo = repos.data.slice(0, 4);
         
+        setReposInfo(reposInfo);
+
         const userInfo = res.data;
         
         const userName = userInfo.name;
@@ -113,23 +119,40 @@ function App() {
             : <Fragment />
           }
 
-          { user && !error
+          { user && !error && !loader
             ? 
-              <div className="userInfoBlock">
-                <div className="userInfoVisual">
-                  <img src={ userImg } alt={ user } className="userInfoImg"/>
+              <div className="userBlock">
+                <div className="userInfoBlock">
+                  <div className="userInfoVisual">
+                    <img src={ userImg } alt={ user } className="userInfoImg"/>
+                  </div>
+
+                  <div className="userInfoDesc">
+                    <p className="userInfoName">{ user }</p>
+                    <p className="userInfoBio">{ userBio }</p>
+                    <p className="userInfoRepos userInfoDefault"><FiArchive size={ 13 } color="#ee505e" /> <span className="userTitleDefaultTitle">Repositories:</span> { userRepos }</p>
+                    <p className="userInfoFollowers userInfoDefault"><FiUsers size={ 13 } color="#ee505e" /> <span className="userTitleDefaultTitle">Followers:</span> { userFollowers }</p>
+
+                    <div className="userInfoLinks">
+                      <a href={ userLink } className="userInfoLink">Contact</a>
+                      { userHireable ? <a href={ userLink } className="userInfoHirable">Hire me!</a> : <Fragment /> }
+                    </div>
+                  </div>
                 </div>
 
-                <div className="userInfoDesc">
-                  <p className="userInfoName">{ user }</p>
-                  <p className="userInfoBio">{ userBio }</p>
-                  <p className="userInfoRepos userInfoDefault"><FiArchive size={ 13 } color="#ee505e" /> <span className="userTitleDefaultTitle">Repositories:</span> { userRepos }</p>
-                  <p className="userInfoFollowers userInfoDefault"><FiUsers size={ 13 } color="#ee505e" /> <span className="userTitleDefaultTitle">Followers:</span> { userFollowers }</p>
-
-                  <div className="userInfoLinks">
-                    <a href={ userLink } className="userInfoLink">Contact</a>
-                    { userHireable ? <a href={ userLink } className="userInfoHirable">Hire me!</a> : <Fragment /> }
-                  </div>
+                <div className="userReposBlock">
+                  <ul className="reposContainer">
+                    { 
+                      reposInfo.map(repo => (
+                        <li key={ repo.id } className="reposUnit">
+                          <p className="reposTitle">{ repo.name }</p>
+                          <p className="reposDesc">{ repo.description }</p>
+                          <p className="reposLanguage"><span className="reposLanguageTitle">Language:</span> { repo.language }</p>
+                          <a className="reposLink" href={ repo.html_url }>See Repository</a>
+                        </li>
+                      )) 
+                    }
+                  </ul>
                 </div>
               </div>
             : 

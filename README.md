@@ -18,7 +18,7 @@ Github overview, inspired by [this](https://github.com/florinpop17/app-ideas/blo
 ## Added Functionality
 - [x] If user is hirable, it will show a "hire me" button 
 
-## Tecnologias utilizadas
+## Technologies used
 - React
 - Axios
 - Feather Icons

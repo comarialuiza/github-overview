@@ -170,6 +170,7 @@ img {
     border-radius: 20px;
     background-color: #fff;
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
 
 .userInfoBlock {
@@ -200,10 +201,6 @@ img {
 .userInfoImg {
     border-radius: 50%;
     width: 100%;
-}
-
-.userInfoBlock {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .userInfoName {
